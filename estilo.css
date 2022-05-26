@@ -1,0 +1,645 @@
+:root {
+    /* Config */
+    --titulo-site:'empório do chocolate';
+    /* variaveis para paleta de cores */
+    --creme: rgb(255, 236, 198);
+    --top-choco: rgb(119, 67, 42);
+    --bottom-choco: rgb(97, 48, 30);
+    --right-choco: rgb(119, 50, 34);
+    --left-choco: rgb(175, 131, 111);
+    --choco-trans: rgba(175, 131, 111, 0.384);
+    --bg-choco: rgb(138, 92, 71);
+    --placeholder: rgb(67, 44, 35);
+    /* variaveis para paleta de cores selector active */
+    --top-choco-act: rgb(142, 73, 41);
+    --bottom-choco-act: rgb(133, 59, 32);
+    --right-choco-act: rgb(174, 122, 98);
+    --left-choco-act: rgb(128, 43, 23);
+    --bg-choco-act: rgb(159, 98, 70);
+    /* variaveis para paleta de cores selector hover */
+    --top-choco-hov: rgb(151, 78, 44);
+    --bottom-choco-hov: rgb(129, 58, 32);
+    --right-choco-hov: rgb(129, 53, 35);
+    --left-choco-hov: rgb(168, 126, 107);
+    --bg-choco-hov: rgb(160, 96, 67);
+    --navbar: rgb(122, 77, 55);
+    --navbar-trans:rgba(122, 77, 55, 0.699);
+    /* outros */
+    --header-link: var(--creme);
+    --font-pc: cursive;
+    --font-cel: arial;
+}
+
+/* reset */
+
+/* LEMBRAR DE ADICIONAR TRANSITION NO NAVBAR PRINCIPAL */
+
+
+:focus {
+    outline: none;
+}
+
+html, body {
+    top: 0;
+    margin: 0px;
+    padding: 0px;
+    width: 100%;
+    height: 100%;
+    box-sizing: border-box;
+    background: url('images/background2.jpg') fixed;
+}
+
+/* Fim de reset */
+
+.wrapper {
+    min-height: 100%;
+    position: relative;    
+}
+
+.header {
+    background-color: var(--navbar-trans);
+    position: absolute;
+    z-index: 10;
+    top: 0;
+    left: 0;
+    width: 100%;
+    border-radius: 20px;
+    font-size:25px;
+    font-weight: bold;
+}
+
+.navbar ul {
+    margin: 0;
+    padding: 0;
+    list-style: none;
+    overflow: hidden;
+}
+
+.btn {
+    text-align: center;
+}
+
+.navbar ul a {
+    font-family: var(--font-cel);
+    display: block;
+    padding: 10vmin;
+    border-right: 1px solid #aaa;
+    text-decoration: none;
+}
+
+.navbar ul a:hover, a:focus {
+    background-color: var(--choco-trans);
+    border-radius: 20px;
+}
+
+.navbar .logo {
+    float: left;
+    display: block;
+    font-size: 1.2em;
+    padding: 10px 20px;
+}
+
+.navbar .menu {
+    clear: both;
+    max-height: 0;
+    transition: max-height .2s ease-out;
+}
+
+.navbar .menu-icon {
+    padding: 21.5px 10px;
+    position: relative;
+    float: left;
+    cursor: pointer;
+    border-right: 5px solid var(--right-choco);
+    border-left: 5px solid var(--left-choco);
+    border-top: 5px solid var(--top-choco);
+    border-bottom: 5px solid var(--bottom-choco);
+    background-color: var(--bg-choco);
+}
+.navbar .menu-icon:hover {
+    border-right: 5px solid var(--right-choco-hov);
+    border-left: 5px solid var(--left-choco-hov);
+    border-top: 5px solid var(--top-choco-hov);
+    border-bottom: 5px solid var(--bottom-choco-hov);
+    background-color: var(--bg-choco-hov);
+}
+.navbar .menu-icon:active {
+    border-right: 5px solid var(--right-choco-act);
+    border-left: 5px solid var(--left-choco-act);
+    border-top: 5px solid var(--top-choco-act);
+    border-bottom: 5px solid var(--bottom-choco-act);
+    background-color: var(--bg-choco-act);
+}
+
+.navbar .menu-icon .nav-icon {
+    background: #333;
+    display: block;
+    height: 5px;
+    width: 30px;
+    position: relative;
+    transition: .2s ease-out;
+}
+
+.navbar .menu-icon .nav-icon:before {
+    background: #333;
+    content: '';
+    display: block;
+    height: 100%;
+    width: 100%;
+    position: absolute;
+    transition: all .2s ease-out;
+    top: 10px;
+}
+
+.navbar .menu-icon .nav-icon:after {
+    background: #333;
+    content: '';
+    display: block;
+    height: 100%;
+    width: 100%;
+    position: absolute;
+    transition: all .2s ease-out;
+    top: -10px;
+}
+
+.navbar .menu-btn {
+    display: none;
+}
+
+.navbar .menu-btn:checked~.menu {
+    max-height: 100vh;
+}
+
+.navbar .menu-btn:checked~.menu-icon .nav-icon {
+    background: transparent;
+}
+
+.navbar .menu-btn:checked~.menu-icon .nav-icon:before {
+    transform: rotate(-45deg);
+    top: 0;
+}
+
+.navbar .menu-btn:checked~.menu-icon .nav-icon:after {
+    transform: rotate(45deg);
+    top: 0;
+}
+
+.inv {
+    display: none;
+}
+
+.logo {
+    z-index: 11;
+    align-items: center;
+    display: flex;
+    justify-content: center;
+    height: 58px;
+    width: 214px;
+    background: url('images/barra3.png') no-repeat;
+    margin: auto;
+    font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
+    font-size: 13px;
+    font-weight: bolder;
+}
+
+.logo a {
+    text-decoration: none;
+    -webkit-text-stroke: 0.5px var(--bottom-choco);
+    background: -webkit-linear-gradient(var(--left-choco), var(--creme));
+    background-clip: text;
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    -webkit-touch-callout: none;
+    -webkit-user-select: none;
+    -khtml-user-select: none;
+    -moz-user-select: none;
+    -ms-user-select: none;
+    user-select: none;
+    letter-spacing: 0px;
+}
+
+.logo a::after {
+    letter-spacing: 1px;
+    text-transform: uppercase;
+    content: var(--titulo-site);
+}
+
+.logo {
+    float: right;
+    position: absolute;
+    top: 0;
+    left: 20%;
+    right: 20%;
+}
+
+.div-choco {
+    margin: 7px;
+    border-right: 7px solid var(--right-choco);
+    border-left: 7px solid var(--left-choco);
+    border-top: 7px solid var(--top-choco);
+    border-bottom: 7px solid var(--bottom-choco);
+    background-color: var(--bg-choco);
+    border-radius: 20px;
+    padding: 8px;
+    background-image: url('images/background.jpg');
+    text-decoration: none;
+    font-family: var(--font-cell);
+    color: var(--creme);
+    opacity: 0.98;
+}
+
+.just p {
+    text-align: justify;
+    align-items: center;
+}
+
+.div-choco hr {
+    width: 100%;
+    margin: 20px auto;
+}
+
+.hr-choco {
+    margin: auto;
+    border: 0px;
+    background-color: var(--navbar);
+    height: 58px;
+}
+
+footer {
+    margin: 0px;
+    border-left: 0px;
+    border-right: 0px;
+    border-top: 8px solid var(--top-choco);
+    border-bottom: 7px solid var(--bottom-choco);
+    background-color: var(--bg-choco);
+    height: 45px;
+    width: 100%;
+    position: absolute;
+    bottom: 0;
+    left: 0;
+}
+
+.content {
+    padding-bottom: 70px;
+}
+
+.infos {
+    font-family: var(--font-cel);
+    font-size: 12.1px;
+    color: var(--creme);
+    margin: 5px 5px 5px 10vmin;
+}
+
+.infos p {
+    margin: 7.5px;
+}
+
+.form-div input[type=submit] {
+    margin:auto;
+    display: flex;
+}
+
+footer a:link, a:visited, a:hover, a:active {
+    color: var(--creme);
+    text-decoration: none;
+}
+
+.div-choco a:link, a:visited, a:hover, a:active {
+    color: var(--creme);
+}
+
+.header a:link, a:visited, a:hover, a:active {
+    color: var(--header-link);
+}
+
+input[type=submit] {
+    border-right: 5px solid var(--right-choco);
+    border-left: 5px solid var(--left-choco);
+    border-top: 5px solid var(--top-choco);
+    border-bottom: 5px solid var(--bottom-choco);
+    background-color: var(--bg-choco);
+    color: var(--creme);
+    border-radius: 5px;
+}
+
+input[type=submit]:hover, input[type=submit]:focus {
+    border-right: 5px solid var(--right-choco-hov);
+    border-left: 5px solid var(--left-choco-hov);
+    border-top: 5px solid var(--top-choco-hov);
+    border-bottom: 5px solid var(--bottom-choco-hov);
+    background-color: var(--bg-choco-hov);
+}
+
+input[type=submit]:active {
+    border-right: 5px solid var(--right-choco-act);
+    border-left: 5px solid var(--left-choco-act);
+    border-top: 5px solid var(--top-choco-act);
+    border-bottom: 5px solid var(--bottom-choco-act);
+    background-color: var(--bg-choco-act);
+}
+
+input, input:focus, textarea, textarea:focus, label {
+    background-color: var(--bg-choco);
+    color: var(--creme);
+    border: none;
+    margin: auto;
+    padding: 0px;
+    font-size: 15px;
+    resize: none;
+}
+
+input:-webkit-autofill, input:-webkit-autofill:hover, input:-webkit-autofill:focus, textarea:-webkit-autofill, textarea:-webkit-autofill:hover, textarea:-webkit-autofill:focus, select:-webkit-autofill, select:-webkit-autofill:hover, select:-webkit-autofill:focus {
+    -webkit-text-fill-color: var(--creme);
+    box-shadow: var(--bg-choco);
+    transition: 5000s ease-in-out 5000s;
+}
+
+::-webkit-scrollbar {
+    width: 15px;
+}
+
+::-webkit-scrollbar-track {
+    background-color: var(--creme);
+}
+
+::-webkit-scrollbar-thumb {
+    border-right: 2px solid var(--right-choco);
+    border-left: 2px solid var(--left-choco);
+    border-top: 2px solid var(--top-choco);
+    border-bottom: 2px solid var(--bottom-choco);
+    background-color: var(--bg-choco);
+}
+
+::-webkit-scrollbar-thumb:hover, ::-webkit-scrollbar-thumb:focus {
+    border-right: 2px solid var(--right-choco-hov);
+    border-left: 2px solid var(--left-choco-hov);
+    border-top: 2px solid var(--top-choco-hov);
+    border-bottom: 2px solid var(--bottom-choco-hov);
+    background-color: var(--bg-choco-hov);
+}
+
+::-webkit-scrollbar-thumb:active {
+    border-right: 2px solid var(--right-choco-act);
+    border-left: 2px solid var(--left-choco-act);
+    border-top: 2px solid var(--top-choco-act);
+    border-bottom: 2px solid var(--bottom-choco-act);
+    background-color: var(--bg-choco-act);
+}
+
+::placeholder {
+    color: var(--placeholder);
+    opacity: 1;
+}
+
+:-ms-input-placeholder {
+    color: var(--placeholder);
+}
+
+::-ms-input-placeholder {
+    color: var(--placeholder);
+}
+
+.clearfix::after {
+    display: table;
+    content: '';
+    clear:both;
+}
+
+.product {
+    font-family: var(--font-cel);
+    margin: 0px;
+    margin-bottom: 20px;
+    border: 0px;
+    border-spacing: 0px;
+    float: left;
+}
+
+td {
+    text-align: center;
+}
+
+.product td {
+    border-right: 5px solid var(--right-choco);
+    border-left: 5px solid var(--left-choco);
+    border-top: 5px solid var(--top-choco);
+    border-bottom: 5px solid var(--bottom-choco);
+}
+
+.form td {
+    border-right: 5px solid var(--right-choco);
+    border-left: 5px solid var(--left-choco);
+    border-top: 5px solid var(--top-choco);
+    border-bottom: 5px solid var(--bottom-choco);
+}
+
+.formulario {
+    overflow-x:auto;
+    width: 100%;
+    margin: auto;
+}
+
+.div-choco a {
+    font-family: var(--font-cel);
+    text-decoration: none;
+}
+
+h1 {
+    margin: 0px;
+    font-size: 6.5vmin;
+}
+
+h2, h3, h4, h5, h6 {
+    margin: 10px 0px 10px 0px;
+    font-size: 4.5vmin;
+}
+
+p {
+    margin: 10px 0px 0px 0px;
+}
+
+.sobre img {
+    height: 30vmin;
+    width: 50vmin;
+    margin: 10px;
+}
+
+.imagem-esq {
+    height: 38vmin;
+    width: 50vmin;
+    margin: 10px 10px 5px 0px;
+    float: left;
+}
+
+.imagem-dir {
+    height: 38vmin;
+    width: 50vmin;
+    margin: 10px 0px 5px 10px;
+    float: right;
+}
+
+@media (min-width: 68.5em) {
+    .hr-choco {
+        margin: 10px auto;
+        border-left: 0px;
+        border-right: 0px;
+        border-top: 10px solid var(--top-choco);
+        border-bottom: 10px solid var(--bottom-choco);
+        background-color: var(--bg-choco);
+        height: 10px;
+    }
+    .logo {
+        float: none;
+        position: relative;
+        top: 0;
+        left: 0;
+    }
+    .inv {
+        display: flex;
+    }
+    .menu-btn, .menu-icon, .nav-icon, .menu {
+        display: none;
+    }
+    .header {
+        background: none;
+        position: sticky;
+        top: 1%;
+        z-index: 3;
+    }
+    .logo {
+        align-items: center;
+        display: flex;
+        justify-content: center;
+        height: 217px;
+        width: 781px;
+        background: url('images/barra.png') no-repeat;
+        margin: auto;
+        font-family: Impact, sans-serif;
+        font-size: 55px;
+        font-weight: bolder;
+    }
+    .logo a {
+        text-decoration: none;
+        -webkit-text-stroke: 2.8px var(--bottom-choco);
+        background: -webkit-linear-gradient(var(--left-choco), var(--creme));
+        background-clip: text;
+        -webkit-background-clip: text;
+        -webkit-text-fill-color: transparent;
+        -webkit-touch-callout: none;
+        -webkit-user-select: none;
+        -khtml-user-select: none;
+        -moz-user-select: none;
+        -ms-user-select: none;
+        user-select: none;
+    }
+    .logo a::after {
+        letter-spacing: 9.5px;
+    }
+    .navbar {
+        align-items: center;
+        display: flex;
+        justify-content: center;
+        margin: auto;
+    }
+    .navbar div {
+        float: left;
+    }
+    .choco {
+        height: 46px;
+        width: 90px;
+        border-right: 15px solid var(--right-choco);
+        border-left: 15px solid var(--left-choco);
+        border-top: 10px solid var(--top-choco);
+        border-bottom: 10px solid var(--bottom-choco);
+        background-color: var(--bg-choco);
+    }
+    .navchoco-esq, .navchoco-esq:hover, .navchoco-esq:focus {
+        border-left: 15px solid var(--left-choco);
+        border-bottom-left-radius: 40px;
+        border-top-left-radius: 40px;
+    }
+    .navchoco-dir, .navchoco-dir:hover, .navchoco-dir:focus {
+        border-right: 15px solid var(--right-choco);
+        border-bottom-right-radius: 40px;
+        border-top-right-radius: 40px;
+    }
+    .btn {
+        height: 39px;
+        width: 90px;
+        text-align: center;
+        font-family: var(--font-pc);
+        font-size: 20px;
+        font-weight: bold;
+        padding-top: 7px;
+        -webkit-touch-callout: none;
+        -webkit-user-select: none;
+        -khtml-user-select: none;
+        -moz-user-select: none;
+        -ms-user-select: none;
+        user-select: none;
+        transition: opacity 0.3s ease-in-out;
+    }
+    .btn:hover, .btn:focus {
+        border-right: 15px solid var(--right-choco-hov);
+        border-left: 15px solid var(--left-choco-hov);
+        border-top: 10px solid var(--top-choco-hov);
+        border-bottom: 10px solid var(--bottom-choco-hov);
+        background-color: var(--bg-choco-hov);
+        opacity: 0.95;
+    }
+    .btn:active {
+        border-right: 15px solid var(--right-choco-act);
+        border-left: 15px solid var(--left-choco-act);
+        border-top: 10px solid var(--top-choco-act);
+        border-bottom: 10px solid var(--bottom-choco-act);
+        background-color: var(--bg-choco-act);
+    }
+    .div-choco, table, .div-choco a {
+        font-family: var(--font-pc);        
+    }
+    h1 {
+        margin: 0px;
+        font-size: 2em;
+    }
+    
+    h2, h3, h4, h5, h6 {
+        margin: 10px 0px 10px 0px;
+        font-size: 1.5em;
+    }
+    .form-div input[type=submit] {
+        margin: 10px 0px 0px 198px;
+    }
+    footer {
+        border-top: 10px solid var(--top-choco);
+        border-bottom: 10px solid var(--bottom-choco);
+    }
+    .imagem-esq {
+        height: 38vmin;
+        width: 50vmin;
+        margin: 20px 20px 10px 0px;
+        float: left;
+    }
+    
+    .imagem-dir {
+        height: 38vmin;
+        width: 50vmin;
+        margin: 20px 0px 10px 20px;
+        float: right;
+    }
+    .div-choco {
+        margin: 10px;
+        border-right: 10px solid var(--right-choco);
+        border-left: 10px solid var(--left-choco);
+        border-top: 10px solid var(--top-choco);
+        border-bottom: 10px solid var(--bottom-choco);
+        background-color: var(--bg-choco);
+        border-radius: 20px;
+        padding: 20px;
+    }
+    input, input:focus, textarea, textarea:focus, label {
+        background-color: var(--bg-choco);
+        color: var(--creme);
+        border: none;
+        margin: auto;
+        font-size: 20px;
+    }
+}

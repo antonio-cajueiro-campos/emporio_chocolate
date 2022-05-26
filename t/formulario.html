@@ -1,0 +1,131 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="author" content="tiago antonio cajueiro de campos">
+    <meta name="description" content="O espaço para os coffe maníacos">
+    <meta name="keywords"
+        content="café, capuccino, latte, mocca, arabe, affogato, expresso, macchiato, ristretto, gourmet, coffe, boss">
+    <meta name="e-mail" content="tcajueiro_1995@hotmail.com">
+    <meta http-equiv="content-type" content="text/html; charset=UTF-8">
+    <link rel="shortcut icon" href="imagens\favicon.ico">
+    <title>Empório Coffe Boss</title>
+    <style>
+        @import url('https://fonts.googleapis.com/css?family=Courgette&display=swap');
+        @import url('https://fonts.googleapis.com/css?family=Marck+Script&display=swap');
+
+        h2 {
+            font-family: cursive;
+            font-size: 25px;
+            margin-left: 50px;
+            font-weight: 700;
+            text-align: center;
+            color: maroon;
+            text-shadow: black;
+            text-shadow: 0.1em 0.1em 0.1em;            
+        }
+
+        form {
+            font-size: 150%;
+            font-style: oblique;
+            margin-left: 5%;
+            font-family: 'Marck Script', cursive;
+        }
+
+        #form {
+            background-color: rgb(209, 168, 168);
+            width: 50%;
+            height: 50%;
+            margin-left: 28%;
+            border: solid;
+            border-color:sienna;
+        }
+    </style>
+
+
+
+</head>
+
+<body style="background-image: url('imagens/truebackground.jpg'); background-size:100%; background-attachment: fixed;">
+
+    <a href="index.html"><img src="imagens\newlogo.png" alt="logo da coffe boss" height="100" width="200"
+            style="margin-top: 0px; margin-left:10px; border-radius:20px"></a>
+
+    <br><br><br><br>
+
+
+    <center>
+        <li style="display:inline-block"><a href="quemsomos.html"><img src="imagens\coffebackground1.png"
+                    alt="botão: quem somos" height="50" width="200" border="2px" style="border-color:black"></a>
+        </li>
+        <li style="display:inline-block"><a href="nossosprodutos.html"><img src="imagens\coffebackground3.png"
+                    alt="botão: nossos produtos" height="50" width="250" border="2px" style="border-color:black"></a>
+        </li>
+        <li style="display:inline-block"><a href="parceiros.html"><img src="imagens\coffebackground2.jpg"
+                    alt="botão: parceiros" height="50" width="250" border="2px" style="border-color:black"></a>
+        </li>
+        <li style="display:inline-block"><a href="historiaemporio.html"><img src="imagens\botao4.png" height="50"
+                    alt="botão: história dos empórios" width="250" border="2px" style="border-color:black"></a>
+        </li>
+
+    </center>
+    <h2> Junte-se a nós </h2>
+
+    <br><br><br>
+    <div id="form">
+        <form>
+
+            <p>Identificação: </p>
+
+            <p><label>Nome Completo
+                    <input type="text" id="firstname" name="firstname">
+                </label></p>
+            <p><label for="email">E-mail: </label>
+                <input type="email" id="email" name="email"></p>
+            <p><label for="phone">Telefone Residencial: </label>
+                <input type="tel" id="phone" name="phone" pattern="[0-9]{3}-[0-9]{2}-[0-9]{3}"
+                    placeholder="(xx)xxxx-xxxx">
+            </p>
+            <p><label for="phone">Telefone Celular: </label>
+                <input type="tel" id="phone" name="phone" pattern="[0-9]{3}-[0-9]{2}-[0-9]{3}"
+                    placeholder="(xx)xxxx-xxxx">
+            </p>
+            <p><label>Usuário: </label>
+                <input type="text" id="user" name="user"></p>
+            <p><label for="pwd">Senha: </label>
+                <input type="password" id="pwd" name="pwd"></p>
+            <p><label for="pwd">Confirmar senha: </label>
+                <input type="password" id="pwd" name="pwd"></p>
+
+            <p>Localização: </p>
+
+            <p><label>Endereço:
+                    <input type="text" id="end" name="endereço">
+
+                </label>
+            </p>
+            <button>Criar Conta</button>
+        </form>
+    </div>
+
+
+    </form>
+
+
+
+
+    <div vw class="enabled">
+        <div vw-access-button class="active"></div>
+        <div vw-plugin-wrapper>
+            <div class="vw-plugin-top-wrapper"></div>
+        </div>
+    </div>
+    <script src="https://vlibras.gov.br/app/vlibras-plugin.js"></script>
+    <script>
+        new window.VLibras.Widget('https://vlibras.gov.br/app');
+    </script>
+</body>
+
+</html>
